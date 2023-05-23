@@ -1339,9 +1339,6 @@ $ArchetypeStopImage.Height = 18
 if ($DetectionCount -match "3") { $ArchetypeStopImage.location = New-object system.drawing.point(15,297) } elseif ($DetectionCount -match "2") { $ArchetypeStopImage.location = New-object system.drawing.point(15,240) } elseif ($DetectionCount -match "1") { $ArchetypeStopImage.location = New-object system.drawing.point(15,183) }
 $ArchetypeStopImage.Add_Click({
 
-    # Displays Message Dialog Box - If the user wants to start the pokemon encounter count 
-    $StopResult = [System.Windows.MessageBox]::Show("Do you want to STOP the counter?","Archetype Counter","YesNo","Question")
-
     # Checks if Message Dialog Box "Yes" has been selected
     if ($StopResult -match "Yes") { 
 
@@ -1415,9 +1412,6 @@ $ArchetypeCloseImage.Width = 11
 $ArchetypeCloseImage.Height = 11
 $ArchetypeCloseImage.location = New-object system.drawing.point(73,11)
 $ArchetypeCloseImage.Add_Click({
-
-    # Displays Message Dialog Box - If the user wants to exit or not
-    $CloseLeftResult = [System.Windows.MessageBox]::Show("Do you want to EXIT the counter?","Archetype Counter","YesNo","Question")
 
     # Checks if Message Dialog Box "Yes" has been selected
     if ($CloseLeftResult -match "Yes") { 
