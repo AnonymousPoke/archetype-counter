@@ -1339,9 +1339,6 @@ $ArchetypeStopImage.Height = 18
 if ($DetectionCount -match "3") { $ArchetypeStopImage.location = New-object system.drawing.point(15,297) } elseif ($DetectionCount -match "2") { $ArchetypeStopImage.location = New-object system.drawing.point(15,240) } elseif ($DetectionCount -match "1") { $ArchetypeStopImage.location = New-object system.drawing.point(15,183) }
 $ArchetypeStopImage.Add_Click({
 
-    # Checks if Message Dialog Box "Yes" has been selected
-    if ($StopResult -match "Yes") { 
-
         # Grabs the config file in its "current" state
         $SetConfig = "$PWD\Counter Config Files\CounterConfig_$GetProfile.txt"
         $GetConfig = Get-Content $SetConfig
@@ -1365,8 +1362,6 @@ $ArchetypeStopImage.Add_Click({
 
         # Starts up Archetype Counter
         Start-Process "$PWD\ArchetypeCounter.bat" -NoNewWindow -Wait
-
-    }
 
 })
 $ArchetypeForm.controls.Add($ArchetypeStopImage)
@@ -1413,9 +1408,6 @@ $ArchetypeCloseImage.Height = 11
 $ArchetypeCloseImage.location = New-object system.drawing.point(73,11)
 $ArchetypeCloseImage.Add_Click({
 
-    # Checks if Message Dialog Box "Yes" has been selected
-    if ($CloseLeftResult -match "Yes") { 
-
         # Grabs the config file in its "current" state
         $SetConfig = "$PWD\Counter Config Files\CounterConfig_$GetProfile.txt"
         $GetConfig = Get-Content $SetConfig
@@ -1439,8 +1431,6 @@ $ArchetypeCloseImage.Add_Click({
 
         # This exits the application (Winform) properly 
         [System.Windows.Forms.Application]::Exit(); Stop-Process $PID -Force 
-
-    }
 
 })
 $ArchetypeForm.controls.Add($ArchetypeCloseImage)
