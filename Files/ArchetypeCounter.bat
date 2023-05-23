@@ -3104,14 +3104,14 @@ Function PlayAction {
                             if ($DebugMode -match "False") { Remove-Item "$PWD\Counter Functions\ScreenCapture\DEBUG\*.*" | Where { ! $_.PSIsContainer } }
 
                             # Checks for pixel color to ensure user is not in battle anymore
-                            While ($GetPixelColor -match "fffb00fb" -or $GetPixelColor -match "fd00fdff" -or $GetPixelColor -match "f900f9ff" -or $GetPixelColor -match "fb00fbff" -or $GetPixelColor -match "fff900f9") { Start-Process "$PWD\Counter Functions\ScreenCapture\ScreenCapture.ahk" -Wait; $PixelSearchImage = New-Object System.Drawing.Bitmap "$PWD\Counter Functions\ImageMagick\ArchetypeScreenshot.png"; $GetPixelColor = $PixelSearchImage.GetPixel(0,0); $GetPixelColor = ($GetPixelColor).Name; $PixelSearchImage.Dispose() }
+                            While ($GetPixelColor -match "fffb00fb" -or $GetPixelColor -match "fd00fdff" -or $GetPixelColor -match "f900f9ff" -or $GetPixelColor -match "fb00fbff" -or $GetPixelColor -match "fff900f9" -or $GetPixelColor -match "fffd00fd") { Start-Process "$PWD\Counter Functions\ScreenCapture\ScreenCapture.ahk" -Wait; $PixelSearchImage = New-Object System.Drawing.Bitmap "$PWD\Counter Functions\ImageMagick\ArchetypeScreenshot.png"; $GetPixelColor = $PixelSearchImage.GetPixel(0,0); $GetPixelColor = ($GetPixelColor).Name; $PixelSearchImage.Dispose() }
 
                             # Reset "Busy" on the counter form
                             $Script:SyncHashTable.ArchetypeStopImage.Visible = $true
                             $Script:SyncHashTable.ArchetypeBusyImage.Visible = $false
 
-                            # Restarts counter to update form
-                            Start-Process "$PWD\ArchetypeCounter.bat" -NoNewWindow -Wait
+                            # Break current loop and re-try
+                            Continue
 
                         }
 
@@ -3143,14 +3143,14 @@ Function PlayAction {
                             if ($DebugMode -match "False") { Remove-Item "$PWD\Counter Functions\ScreenCapture\DEBUG\*.*" | Where { ! $_.PSIsContainer } }
 
                             # Checks for pixel color to ensure user is not in battle anymore
-                            While ($GetPixelColor -match "fffb00fb" -or $GetPixelColor -match "fd00fdff" -or $GetPixelColor -match "f900f9ff" -or $GetPixelColor -match "fb00fbff" -or $GetPixelColor -match "fff900f9") { Start-Process "$PWD\Counter Functions\ScreenCapture\ScreenCapture.ahk" -Wait; $PixelSearchImage = New-Object System.Drawing.Bitmap "$PWD\Counter Functions\ImageMagick\ArchetypeScreenshot.png"; $GetPixelColor = $PixelSearchImage.GetPixel(0,0); $GetPixelColor = ($GetPixelColor).Name; $PixelSearchImage.Dispose() }
+                            While ($GetPixelColor -match "fffb00fb" -or $GetPixelColor -match "fd00fdff" -or $GetPixelColor -match "f900f9ff" -or $GetPixelColor -match "fb00fbff" -or $GetPixelColor -match "fff900f9" -or $GetPixelColor -match "fffd00fd") { Start-Process "$PWD\Counter Functions\ScreenCapture\ScreenCapture.ahk" -Wait; $PixelSearchImage = New-Object System.Drawing.Bitmap "$PWD\Counter Functions\ImageMagick\ArchetypeScreenshot.png"; $GetPixelColor = $PixelSearchImage.GetPixel(0,0); $GetPixelColor = ($GetPixelColor).Name; $PixelSearchImage.Dispose() }
 
                             # Reset "Busy" on the counter form
                             $Script:SyncHashTable.ArchetypeStopImage.Visible = $true
                             $Script:SyncHashTable.ArchetypeBusyImage.Visible = $false
 
-                            # Restarts counter to update form
-                            Start-Process "$PWD\ArchetypeCounter.bat" -NoNewWindow -Wait
+                            # Break current loop and re-try
+                            Continue
                         
                         }
 
@@ -3191,7 +3191,7 @@ Function PlayAction {
                             $GetConfig | Set-Content -Path $SetConfig
 
                             # Checks for pixel color to ensure user is not in battle anymore
-                            While ($GetPixelColor -match "fffb00fb" -or $GetPixelColor -match "fd00fdff" -or $GetPixelColor -match "f900f9ff" -or $GetPixelColor -match "fb00fbff" -or $GetPixelColor -match "fff900f9") { Start-Process "$PWD\Counter Functions\ScreenCapture\ScreenCapture.ahk" -Wait; $PixelSearchImage = New-Object System.Drawing.Bitmap "$PWD\Counter Functions\ImageMagick\ArchetypeScreenshot.png"; $GetPixelColor = $PixelSearchImage.GetPixel(0,0); $GetPixelColor = ($GetPixelColor).Name; $PixelSearchImage.Dispose() }
+                            While ($GetPixelColor -match "fffb00fb" -or $GetPixelColor -match "fd00fdff" -or $GetPixelColor -match "f900f9ff" -or $GetPixelColor -match "fb00fbff" -or $GetPixelColor -match "fff900f9" -or $GetPixelColor -match "fffd00fd") { Start-Process "$PWD\Counter Functions\ScreenCapture\ScreenCapture.ahk" -Wait; $PixelSearchImage = New-Object System.Drawing.Bitmap "$PWD\Counter Functions\ImageMagick\ArchetypeScreenshot.png"; $GetPixelColor = $PixelSearchImage.GetPixel(0,0); $GetPixelColor = ($GetPixelColor).Name; $PixelSearchImage.Dispose() }
 
                             # Reset "Busy" on the counter form
                             $Script:SyncHashTable.ArchetypeStopImage.Visible = $true
@@ -3510,7 +3510,7 @@ Function PlayAction {
                         } 
 
                         # Checks for pixel color to ensure user is not in battle anymore
-                        While ($GetPixelColor -match "fffb00fb" -or $GetPixelColor -match "fd00fdff" -or $GetPixelColor -match "f900f9ff" -or $GetPixelColor -match "fb00fbff" -or $GetPixelColor -match "fff900f9") { Start-Process "$PWD\Counter Functions\ScreenCapture\ScreenCapture.ahk" -Wait; $PixelSearchImage = New-Object System.Drawing.Bitmap "$PWD\Counter Functions\ImageMagick\ArchetypeScreenshot.png"; $GetPixelColor = $PixelSearchImage.GetPixel(0,0); $GetPixelColor = ($GetPixelColor).Name; $PixelSearchImage.Dispose() }
+                        While ($GetPixelColor -match "fffb00fb" -or $GetPixelColor -match "fd00fdff" -or $GetPixelColor -match "f900f9ff" -or $GetPixelColor -match "fb00fbff" -or $GetPixelColor -match "fff900f9" -or $GetPixelColor -match "fffd00fd") { Start-Process "$PWD\Counter Functions\ScreenCapture\ScreenCapture.ahk" -Wait; $PixelSearchImage = New-Object System.Drawing.Bitmap "$PWD\Counter Functions\ImageMagick\ArchetypeScreenshot.png"; $GetPixelColor = $PixelSearchImage.GetPixel(0,0); $GetPixelColor = ($GetPixelColor).Name; $PixelSearchImage.Dispose() }
 
                         # Reset "Busy" on the counter form
                         $Script:SyncHashTable.ArchetypeStopImage.Visible = $true
